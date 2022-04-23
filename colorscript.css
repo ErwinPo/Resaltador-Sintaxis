@@ -1,0 +1,9 @@
+body {background-color: rgb(37, 37, 37);}
+.int {color: cornflowerblue;}
+.float {color:cadetblue;}
+.string {color: darkseagreen;}
+.operator {color: indianred;}
+.keywords {color:darkslateblue;}
+.imagnumber {color: darkcyan;}
+.delimiter {color: mediumvioletred;}
+.id {color: azure;}
