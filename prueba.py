@@ -1,3 +1,4 @@
+#Programa para calcular el IMC
 peso=float(input("Dame el peso en kgs"))
 estatura=float(input("Dame la estatura en mts"))
 if estatura > 0:
