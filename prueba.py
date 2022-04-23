@@ -15,3 +15,10 @@ if estatura > 0:
                 print("Estas en obesidad")
 else:
     print("Error no puedo calcular tu IMC")
+
+    3.23456j
+    "2435"
+    #gfhth
+    3_245.45e-3245_23j
+    .34e-1j
+    134e-34j

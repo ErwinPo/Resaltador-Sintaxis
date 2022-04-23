@@ -33,12 +33,12 @@ Rules.
 
 {D}(\_?{D})*\.(({D}(\_?{D})*)?(e(\-|\+)?{D}(\_?{D})*)?)?  : {token, {float, TokenLine, TokenChars}}.
 \.({D}(\_?{D})*)(e(\-|\+)?{D}(\_?{D})*)?  : {token, {float, TokenLine, TokenChars}}.
+{D}(\_?{D})*\.?(({D}(\_?{D})*)?(e(\-|\+)?{D}(\_?{D})*)?)  : {token, {float, TokenLine, TokenChars}}.
 
 
-{D}+\.{D}([\_]{D}+)(j|J)      : {token, {imagnumber, TokenLine, TokenChars}}.
-({D}+\.{D}+e{D}+)(j|J)        : {token, {imagnumber, TokenLine, TokenChars}}.
-({D}+\.{D}+e\-{D}+)(j|J)      : {token, {imagnumber, TokenLine, TokenChars}}.
-{D}*e{D}+(j|J)                : {token, {imagnumber, TokenLine, TokenChars}}.
+{D}(\_?{D})*\.(({D}(\_?{D})*)?(e(\-|\+)?{D}(\_?{D})*)?)?j|J  : {token, {imagnumber, TokenLine, TokenChars}}.
+\.({D}(\_?{D})*)(e(\-|\+)?{D}(\_?{D})*)?j|J  : {token, {imagnumber, TokenLine, TokenChars}}.
+{D}(\_?{D})*\.?(({D}(\_?{D})*)?(e(\-|\+)?{D}(\_?{D})*)?)j|J  : {token, {imagnumber, TokenLine, TokenChars}}.
 
 
 \[|\]|[,:;@=(){}]|(->)|(\+=)|(\-=)|(/=)|(//=)|(%=)|(@=)|(&=)|\\|(\^=)|(>>=)|(<<=)|(\*=) : {token, {delimiters, TokenLine, TokenChars}}.
