@@ -83,7 +83,7 @@ O = [+||*|/|\//|@|\<<|>>|&|^|~|\:=|<|>|<=|>=|==|!=|\-|\%|\|\|]
 
 
 Rules.
-\s                    : skip_token.
+\s                    : {token, {space, TokenLine, TokenChars}}.
 
 {Newline}             : {token, {newline, TokenLine, TokenChars}}.
 

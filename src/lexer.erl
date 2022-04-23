@@ -2005,8 +2005,9 @@ yystate(S, Ics, Line, Tlen, Action, Alen) ->
 %% {token,Token} | {end_token, Token} | skip_token | {error,String}.
 %% Generated action function.
 
-yyaction(0, _, _, _) ->
-    yyaction_0();
+yyaction(0, TokenLen, YYtcs, TokenLine) ->
+    TokenChars = yypre(YYtcs, TokenLen),
+    yyaction_0(TokenChars, TokenLine);
 yyaction(1, TokenLen, YYtcs, TokenLine) ->
     TokenChars = yypre(YYtcs, TokenLen),
     yyaction_1(TokenChars, TokenLine);
@@ -2063,10 +2064,10 @@ yyaction(18, TokenLen, YYtcs, TokenLine) ->
     yyaction_18(TokenChars, TokenLine);
 yyaction(_, _, _, _) -> error.
 
--compile({inline,yyaction_0/0}).
+-compile({inline,yyaction_0/2}).
 -file("src/lexer.xrl", 84).
-yyaction_0() ->
-     skip_token .
+yyaction_0(TokenChars, TokenLine) ->
+     { token, { space, TokenLine, TokenChars } } .
 
 -compile({inline,yyaction_1/2}).
 -file("src/lexer.xrl", 86).

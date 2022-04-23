@@ -7,3 +7,6 @@ body {background-color: rgb(37, 37, 37);}
 .imagnumber {color: darkcyan;}
 .delimiter {color: mediumvioletred;}
 .id {color: azure;}
+.space {color: rgb(37, 37, 37);}
+.comment {color: darkmagenta;}
+.imagnumber {color:lightseagreen;}

@@ -1,7 +1,16 @@
 defmodule Resaltador do
 
-  def getTokens(charlist) do
-    :lexer.string(charlist)
+  def getTokens(fname) do
+    File.read!(fname)
+    |> to_charlist
+    |>:lexer.string()
+  end
+
+  def main(args\\[]) do
+    args
+    |> getTokens()
+    |> format()
+    |> IO.puts()
   end
 
 
@@ -15,35 +24,26 @@ defmodule Resaltador do
   #def edit(:int, tchars), do: "<a style='color:#00FF00;'>#{tchars}</a>"
 
 
-  def format(tokens) do
-    #result = getTokens()
-    #tokens = elem(result,1)
-
-    Enum.map(tokens, fn {token, tchars} ->
+  def format(token) do
+    tokens = elem(token,1)
+    html = Enum.map(tokens, fn {token, _,tchars} ->
+      tchars = HtmlEntities.encode(to_string(tchars))
       case token do
-        :id -> "<span class=\"identifier\">#{tchars}</span>"
+        :id -> "<span class=\"id\">#{tchars}</span>"
+        :imagnumber -> "<span class=\"imagnumber\">#{tchars}</span>"
         :op -> "<span class=\"operator\">#{tchars}</span>"
-        :int -> "<span class=\"integer\">#{tchars}</span>"
+        :int -> "<span class=\"int\">#{tchars}</span>"
         :comment -> "<span class=\"comment\">#{tchars}</span>"
         :float -> "<span class=\"float\">#{tchars}</span>"
         :keywords -> "<span class=\"keywords\">#{tchars}</span>"
-        :delimiters ->  "<span class=\"delimiters\">#{tchars}</span>"
+        :delimiters ->  "<span class=\"delimiter\">#{tchars}</span>"
+        :string -> "<span class=\"string\">#{tchars}</span>"
+        :newline -> "<span class=\"newline\">#{tchars}</span>"
+        :space -> "<span class=\"space\">#{tchars}</span>"
         _ -> "<span>#{tchars}</span>"
       end
     end)
+    html = Enum.join(html)
+    "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" href=\"colorscript.css\"></head><body><pre>#{html}</pre></body></html>"
   end
-
-  def read(file) do
-    File.read!(file)
-    |> to_charlist()
-    |> :lexer.string
-    |> format()
-    |> Enum.join("\n")
-    #|> write()
-  end
-
-  # def write(data) do
-  #  IO.puts
-  #
-  #  end
 end
