@@ -1,28 +1,13 @@
 defmodule Resaltador do
 
   def getTokens(fname) do
-    File.read!(fname)
-    |> to_charlist
-    |>:lexer.string()
+    File.read!(fname) |> to_charlist |>:lexer.string()
   end
 
   def main(args\\[]) do
     args
-    |> getTokens()
-    |> format()
-    |> IO.puts()
+    |> getTokens() |> format() |> IO.puts()
   end
-
-
-  def edit(:id, tchars), do: "<a style='color:#FF0000;'>#{tchars}</a>"
-  def edit(:op, tchars), do: "<a style='color:#800080;'>#{tchars}</a>"
-  def edit(:int, tchars), do: "<a style='color:#00FF00;'>#{tchars}</a>"
-  def edit(:comment, tchars), do: "<a style='color:#ff8c00;'>#{tchars}</a>"
-  def edit(:float, tchars), do: "<a style='color:#FF00FF;'>#{tchars}</a>"
-  def edit(:keywords, tchars), do: "<a style='color:#dc143c;'>#{tchars}</a>"
-  def edit(:delimiters, tchars), do: "<a style='color:#daa520;'>#{tchars}</a>"
-  #def edit(:int, tchars), do: "<a style='color:#00FF00;'>#{tchars}</a>"
-
 
   def format(token) do
     tokens = elem(token,1)
