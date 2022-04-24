@@ -1,7 +1,7 @@
 defmodule Resaltador do
 
   def getTokens(fname) do
-    File.read!(fname) |> to_charlist |>:lexer.string()
+    File.read!(fname) |> to_charlist |> :lexer.string()
   end
 
   def main(args\\[]) do
