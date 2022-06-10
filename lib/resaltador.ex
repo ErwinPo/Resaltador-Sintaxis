@@ -1,5 +1,16 @@
 defmodule Resaltador do
 
+  def concurrente(lista) do
+    Task.async_stream(lista, fn x -> main(x) end)
+    IO.inspect(self())
+  end
+
+  def secuencial([head|tail]) do
+    main(head)
+    secuencial(tail)
+  end
+  def secuencial([]), do: nil
+
   def getTokens(fname) do
     File.read!(fname) |> to_charlist |> :lexer.string()
   end
