@@ -1,19 +1,10 @@
-x = int(input())
-y = int(input())
-z = int(input())
+import random
 
-x2 = int(input())
-y2 = int(input())
-z2 = int(input())
+n1 =random.randint(1,10)
+n2 = random.randint(1,10)
+print(n1,"+",n2)
 
-def horas(x):
-    segh= x*3600
-    return(segh)
+respuesta=int(input())
 
-def minutos(y):
-    segm= y*60
-    return(segm)
-
-print(horas(x)+ minutos(y) + z)
-
-print(horas(x2)+ minutos(y2) + z2)
+if respuesta == n1+n2:
+    print("bien")

@@ -1,10 +1,14 @@
-x=int()
-number=[]
-while x!= -1:
-    x=int(input())
-    if x== -1:
-        break
-    number.append(x)   
-print(number)
-print(sum(number)/len(number))
+x=int(input())
+final= str()
 
+for cont in range( 1, x, 1):
+    final=final+str(cont)+", "
+    
+for cont in range( x, 1, -1):
+    final=final+str(cont)+", "
+
+print (final+"1")
+
+    
+
+    

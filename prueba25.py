@@ -1,18 +1,11 @@
+def uno (a, b) :
+     a = a + 5
+     b += 10
+     print(a, b)
+     return b
 
-edad = input()
-edad = int(edad)
-añohoy= input()
-añohoy= float(añohoy)
-
-
-if edad > 0 :
-
-    if añohoy > 0:
-    
-        lustros = edad/5
-        print= (lustros)
-    
-    else: Print=('Año no válido')
-
-else: Print=('Edad no válida')
-    
+def main() :
+     x = 5
+     y = 8
+     z = uno(x, y)
+     print(x, y, z)
