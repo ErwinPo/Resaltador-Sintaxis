@@ -1,0 +1,3 @@
+Instrucciones de ejecucion:
+Para modificar el numero de pruebas modificar el valor de number en la linea 1 de operator.ex
+En la carpeta correspondiente al proyecto correr en la terminal: $mix run operator.ex
