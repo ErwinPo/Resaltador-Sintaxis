@@ -1,14 +1,10 @@
-x=int(input())
-final= str()
+base=int(input())
+contador1 = 0
 
-for cont in range( 1, x, 1):
-    final=final+str(cont)+", "
-    
-for cont in range( x, 1, -1):
-    final=final+str(cont)+", "
 
-print (final+"1")
+while contador1<=base:
+    print("*"*contador1)
+    contador1 += 1
 
-    
 
-    
+

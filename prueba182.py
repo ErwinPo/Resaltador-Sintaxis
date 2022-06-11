@@ -1,10 +1,10 @@
-import random
+base=int(input())
+contador1 = 0
 
-n1 =random.randint(1,10)
-n2 = random.randint(1,10)
-print(n1,"+",n2)
 
-respuesta=int(input())
+while contador1<=base:
+    print("*"*contador1)
+    contador1 += 1
 
-if respuesta == n1+n2:
-    print("bien")
+
+

@@ -1,18 +1,10 @@
-
-edad = input()
-edad = int(edad)
-añohoy= input()
-añohoy= float(añohoy)
+base=int(input())
+contador1 = 0
 
 
-if edad > 0 :
+while contador1<=base:
+    print("*"*contador1)
+    contador1 += 1
 
-    if añohoy > 0:
-    
-        lustros = edad/5
-        print= (lustros)
-    
-    else: Print=('Año no válido')
 
-else: Print=('Edad no válida')
-    
+

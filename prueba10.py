@@ -1,9 +1,10 @@
-nombre = input()
-edad = input()
-edad = int(edad)
-año = 2020-edad+100
-if edad > 0 :
-    print (nombre + ' cumplirá 100 años en ' + str(año))
-    
-else:
-    print('Edad no valida')
+base=int(input())
+contador1 = 0
+
+
+while contador1<=base:
+    print("*"*contador1)
+    contador1 += 1
+
+
+

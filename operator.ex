@@ -1,4 +1,4 @@
-number = (1..100)
+number = (1..200)
 lista = Enum.map(number, fn x -> "prueba" <> Integer.to_string(x) <> ".py" end)
 
 Path.expand(File.cwd!,"~/pruebas")

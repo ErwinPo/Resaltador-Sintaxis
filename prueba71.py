@@ -1,19 +1,10 @@
-x = int(input())
-y = int(input())
-z = int(input())
+base=int(input())
+contador1 = 0
 
-x2 = int(input())
-y2 = int(input())
-z2 = int(input())
 
-def horas(x):
-    segh= x*3600
-    return(segh)
+while contador1<=base:
+    print("*"*contador1)
+    contador1 += 1
 
-def minutos(y):
-    segm= y*60
-    return(segm)
 
-print(horas(x)+ minutos(y) + z)
 
-print(horas(x2)+ minutos(y2) + z2)
